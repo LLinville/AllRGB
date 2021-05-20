@@ -1,0 +1,14 @@
+Each unique color resides in one pixel/cell
+Each color is pulled towards colors based on similarity
+    - Pushed from colors that aren't similar?
+
+Compute potential at each point
+Swap two cells if doing so lowers overall potential
+
+
+Potential shader 3 color
+in: r[n*n], g[n*n], b[n*n]
+out: rOut, gOut, bOut
+
+Potential shader (once per color)
+in:
