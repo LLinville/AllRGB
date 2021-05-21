@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aad4ed3-286a-4be2-ab0f-de64071a0234" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AllRGB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AllRGB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/global_potential_annealing/potential_based.py" beforeDir="false" afterPath="$PROJECT_DIR$/global_potential_annealing/potential_based.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/global_potential_annealing/potential_based.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="488">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -171,61 +168,50 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/global_potential_annealing/potential_based.py</url>
-          <line>36</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
-        <expression-string>potential(grid[:100,:100])</expression-string>
+        <expression-string>np.sum(np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)**0.5)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>potential(grid)</expression-string>
+        <expression-string>np.sum(np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)[0,0])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.imshow(potential(grid)*256)</expression-string>
+        <expression-string>np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)[0,0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.imshow(potential(grid))*256</expression-string>
+        <expression-string>np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>plt.imshow(potential(grid))</expression-string>
+        <expression-string>np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>potential(grid)[...,0]</expression-string>
+        <expression-string>np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dropoff[width-1-x:2*width-1-x, width-1-y:2*width-1-y][..., np.newaxis]</expression-string>
+        <expression-string>np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)**0.5</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>potential(grid)[...,:]</expression-string>
+        <expression-string>np.sum(ColorDistance(grid, np.roll(grid, [-1,-1])))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>a = total / width / width</expression-string>
+        <expression-string>ColorDistance(grid, np.roll(grid, [-1,-1]))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -251,8 +237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/global_potential_annealing/potential_based.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="488">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

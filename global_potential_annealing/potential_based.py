@@ -5,9 +5,15 @@ from random import randint
 
 def ColorDistance(rgb1,rgb2):
     '''d = {} distance between two colors(3)'''
-    rm = 0.5*(rgb1[0]+rgb2[0])
-    d = sum((2+rm,4,3-rm)*(rgb1-rgb2)**2)**0.5
+    rm = 0.5*(rgb1[...,0]+rgb2[...,0])
+    d = np.sum(np.sum((2+rm,4,3-rm)*(rgb1-rgb2)**2, axis=2)[0,0]**0.5)
     return d
+
+def perceptual_smoothness(grid):
+    return ColorDistance(grid, np.roll(grid, [-1,-1])) + \
+           ColorDistance(grid, np.roll(grid, [1,-1])) + \
+           ColorDistance(grid, np.roll(grid, [-1,1])) + \
+           ColorDistance(grid, np.roll(grid, [1,1]))
 
 def potential(grid):
     width = grid.shape[0]
@@ -41,12 +47,14 @@ for i in count():
     p1, p2 = grid[x1,y1], grid[x2,y2]
     pot_change = (p2 * pot[x1,y1] + p1 * pot[x2,y2]) - (p1 * pot[x1,y1] + p2 * pot[x2,y2])
     if np.sum(pot_change) < 0:
-        temp = p1
+        temp = p1.copy()
         grid[x1,y1] = p2
         grid[x2,y2] = temp
 
     if i%1000 == 0:
         print(i)
+    if i%10000 == 0:
+        print(f"Smoothness: {perceptual_smoothness(grid)}")
     if i%100000 == 0:
         pot = potential(grid)
     if i%10000 == 0:
